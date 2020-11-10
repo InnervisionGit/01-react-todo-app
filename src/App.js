@@ -1,18 +1,41 @@
 import React, { useState } from 'react';
 import './App.css';
+import { Button, Input, FormControl, InputLabel } from '@material-ui/core';
+import Todo from './Todo.js';
 
 function App() {
-  const [todos, setTodos] = useState(['One', 'Two', 'Three']);
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState('');
+  const addTodo = (event) => {
+    event.preventDefault(); //stops refresh
+    setTodos([...todos, input]);
+    setInput('');
+    // console.log(key);
+  };
   return (
     <div className='App'>
       <h1>Yo!</h1>
-      <input />
-      <button>hi</button>
+      <FormControl>
+        <InputLabel>Add a Task:</InputLabel>
+        <Input
+          value={input}
+          onChange={(event) => setInput(event.target.value)}
+        />
+        <Button
+          disabled={!input}
+          variant='contained'
+          color='primary'
+          type='submit'
+          onClick={addTodo}
+        >
+          Add
+        </Button>
+      </FormControl>
 
       <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+        {todos.map((todo, key) => (
+          <Todo todo={todo} key={key} />
+        ))}
       </ul>
     </div>
   );
