@@ -28,9 +28,9 @@ function Todo(props, key) {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState();
 
-  // const handleOpen = () => {
-  //   setOpen(true);
-  // };
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
   const updateTodo = () => {
     db.collection('todos').doc(props.todo.id).set(
@@ -52,9 +52,7 @@ function Todo(props, key) {
             value={input}
             onChange={(event) => setInput(event.target.value)}
           />
-          <Button disabled={!input} onClick={updateTodo}>
-            Done
-          </Button>
+          <Button onClick={updateTodo}>Done</Button>
         </div>
       </Modal>
       <List className='todo__list'>
