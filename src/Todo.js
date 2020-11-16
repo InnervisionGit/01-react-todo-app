@@ -5,16 +5,21 @@ import {
   Button,
   Modal,
   makeStyles,
+  Input,
+  IconButton,
 } from '@material-ui/core';
 import React, { useState } from 'react';
 import db from './firebase';
 import './Todo.css';
 import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
 import { SettingsPowerRounded } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
+    top: '10%',
+    textAlign: 'center',
     width: 400,
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
@@ -55,12 +60,16 @@ function Todo(props, key) {
       </Modal>
       <List className='todo__list'>
         <ListItem>
-          <button onClick={(e) => setOpen(true)}>Edit</button>
-          <DeleteIcon
-            onClick={(event) =>
-              db.collection('todos').doc(props.todo.id).delete()
-            }
-          />
+          <IconButton>
+            <EditIcon onClick={(e) => setOpen(true)} />
+          </IconButton>
+          <IconButton>
+            <DeleteIcon
+              onClick={(event) =>
+                db.collection('todos').doc(props.todo.id).delete()
+              }
+            />
+          </IconButton>
           <ListItemText key={key.key} primary={props.todo.todo} />
         </ListItem>
       </List>

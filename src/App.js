@@ -34,8 +34,10 @@ function App() {
   };
   return (
     <div className='App'>
-      <div className='App-header'></div>
-      <h1>Yo!</h1>
+      <div className='App-header'>
+        <h1></h1>
+      </div>
+      <h1>T A S K - L I S T</h1>
       <FormControl>
         <InputLabel>Add a Task:</InputLabel>
         <Input
