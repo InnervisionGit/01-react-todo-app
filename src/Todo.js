@@ -7,6 +7,7 @@ import {
   makeStyles,
   Input,
   IconButton,
+  Divider,
 } from '@material-ui/core';
 import React, { useState } from 'react';
 import db from './firebase';
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
     top: '10%',
+    left: '56%',
     textAlign: 'center',
     width: 400,
     backgroundColor: theme.palette.background.paper,
@@ -49,17 +51,29 @@ function Todo(props, key) {
         <div className={classes.paper}>
           <h4>Update your TODO:</h4>
           <input
+            className='edit__input'
+            size='40'
             placeholder={props.todo.todo}
             value={input}
             onChange={(event) => setInput(event.target.value)}
           />
-          <Button disabled={!input} onClick={updateTodo}>
+          &nbsp;
+          <Button
+            className='edit__button'
+            disabled={!input}
+            onClick={updateTodo}
+          >
             Done
           </Button>
         </div>
       </Modal>
       <List className='todo__list'>
         <ListItem>
+          <ListItemText
+            className='todo__item'
+            key={key.key}
+            primary={props.todo.todo}
+          />
           <IconButton>
             <EditIcon onClick={(e) => setOpen(true)} />
           </IconButton>
@@ -70,8 +84,8 @@ function Todo(props, key) {
               }
             />
           </IconButton>
-          <ListItemText key={key.key} primary={props.todo.todo} />
         </ListItem>
+        <Divider />
       </List>
     </>
   );

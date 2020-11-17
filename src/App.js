@@ -37,29 +37,31 @@ function App() {
       <div className='App-header'>
         <h1></h1>
       </div>
-      <h1>T A S K - L I S T</h1>
-      <FormControl>
-        <InputLabel>Add a Task:</InputLabel>
-        <Input
-          value={input}
-          onChange={(event) => setInput(event.target.value)}
-        />
-        <Button
-          disabled={!input}
-          variant='contained'
-          color='primary'
-          type='submit'
-          onClick={addTodo}
-        >
-          Add
-        </Button>
-      </FormControl>
+      <div className='content'>
+        <h1>T A S K - L I S T</h1>
+        <FormControl>
+          <InputLabel>Add a Task:</InputLabel>
+          <Input
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
+          />
+          <Button
+            disabled={!input}
+            variant='contained'
+            color='primary'
+            type='submit'
+            onClick={addTodo}
+          >
+            Add
+          </Button>
+        </FormControl>
 
-      <ul>
-        {todos.map((todo, key) => (
-          <Todo todo={todo} key={key} />
-        ))}
-      </ul>
+        <ul>
+          {todos.map((todo, key) => (
+            <Todo todo={todo} key={key} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
