@@ -4,6 +4,7 @@ import { Button, Input, FormControl, InputLabel } from '@material-ui/core';
 import Todo from './Todo.js';
 import db from './firebase';
 import firebase from 'firebase';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -32,10 +33,20 @@ function App() {
     setInput('');
     // console.log(key);
   };
+
+  const clearTodos = (event) => {
+    event.preventDefault();
+  };
   return (
     <div className='App'>
       <div className='App-header'>
-        <h1></h1>
+        <a href='https://github.com/InnervisionGit/01-react-todo-app'>
+          <h3>
+            <GitHubIcon />
+            &nbsp; InnervisionGit &nbsp;
+            <GitHubIcon />
+          </h3>
+        </a>
       </div>
       <div className='content'>
         <h1>T A S K - L I S T</h1>
@@ -61,6 +72,15 @@ function App() {
             <Todo todo={todo} key={key} />
           ))}
         </ul>
+      </div>
+      <div className='App-footer'>
+        <a href='https://github.com/InnervisionGit/01-react-todo-app'>
+          <h3>
+            <GitHubIcon />
+            &nbsp; InnervisionGit &nbsp;
+            <GitHubIcon />
+          </h3>
+        </a>
       </div>
     </div>
   );
