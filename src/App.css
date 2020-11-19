@@ -13,6 +13,7 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  background-color: #61dafb;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -23,13 +24,16 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 10vh;
+  max-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .App-footer {
   position: fixed;
@@ -57,9 +61,19 @@
   max-width: 60%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10vh;
+
+  display: block;
 }
 
 a {
   text-decoration: none;
   color: white;
 }
+
+/* body {
+  width: 100%;
+  background-image: url('https://images.unsplash.com/photo-1601662528567-526cd06f6582?ixlib=rb-1.2.1&auto=format&fit=crop&w=658&q=80');
+  background-position: center;
+  background-size: auto;
+} */
