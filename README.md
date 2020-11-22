@@ -2,6 +2,7 @@
 
 ### Functionalities:
 
+(CRUD)
 -add
 -read
 -update
