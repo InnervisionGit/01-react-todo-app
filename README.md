@@ -2,7 +2,7 @@
 
 ### (CRUD) Functionalities:
 
--add a todo element to a list
--read the list
--update a desired item in list
--delete an undesired item in list
+    -add a todo element to a list
+    -read the list
+    -update a desired item in list
+    -delete an undesired item in list
