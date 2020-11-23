@@ -31,60 +31,58 @@ function App() {
 
     setTodos([...todos, input]);
     setInput('');
-    // console.log(key);
   };
 
-  const clearTodos = (event) => {
-    event.preventDefault();
-  };
-  return (
-    <div className='App'>
-      <div className='App-header'>
-        <a href='https://github.com/InnervisionGit/01-react-todo-app'>
-          <h3>
-            <GitHubIcon />
-            &nbsp; InnervisionGit &nbsp;
-            <GitHubIcon />
-          </h3>
-        </a>
-      </div>
-      <div className='content'>
-        <h1>T A S K - L I S T</h1>
-        <form>
-          <FormControl>
-            <Input
-              value={input}
-              onChange={(event) => setInput(event.target.value)}
-            />
-            <Button
-              className='add-btn'
-              disabled={!input}
-              variant='contained'
-              color='primary'
-              type='submit'
-              onClick={addTodo}
-            >
-              Add
-            </Button>
-          </FormControl>
-        </form>
-        <ul>
-          {todos.map((todo, key) => (
-            <Todo todo={todo} key={key} />
-          ))}
-        </ul>
-      </div>
-      <div className='App-footer'>
-        <a href='https://github.com/InnervisionGit/01-react-todo-app'>
-          <h3>
-            <GitHubIcon />
-            &nbsp; InnervisionGit &nbsp;
-            <GitHubIcon />
-          </h3>
-        </a>
-      </div>
-    </div>
-  );
+  // const clearTodos = (event) => {
+  //   event.preventDefault();
 }
+return (
+  <div className='App'>
+    <div className='App-header'>
+      <a href='https://github.com/InnervisionGit/01-react-todo-app'>
+        <h3>
+          <GitHubIcon />
+          &nbsp; InnervisionGit &nbsp;
+          <GitHubIcon />
+        </h3>
+      </a>
+    </div>
+    <div className='content'>
+      <h1>T A S K - L I S T</h1>
+      <form className='form-wrapper'>
+        <FormControl>
+          <Input
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
+          />
+          <Button
+            className='add-btn'
+            disabled={!input}
+            variant='contained'
+            color='primary'
+            type='submit'
+            onClick={addTodo}
+          >
+            Add
+          </Button>
+        </FormControl>
+      </form>
+      <ul>
+        {todos.map((todo, key) => (
+          <Todo todo={todo} key={key} />
+        ))}
+      </ul>
+    </div>
+    <div className='App-footer'>
+      <a href='https://github.com/InnervisionGit/01-react-todo-app'>
+        <h3>
+          <GitHubIcon />
+          &nbsp; InnervisionGit &nbsp;
+          <GitHubIcon />
+        </h3>
+      </a>
+    </div>
+  </div>
+);
 
 export default App;
