@@ -6,3 +6,5 @@
     -read the list
     -update a desired item in list
     -delete an undesired item in list
+
+Database currently unaccessible to everyone. (TODOs wont show up)
